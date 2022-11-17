@@ -3,13 +3,13 @@ var server = require("server");
 var cache = require("*/cartridge/scripts/middleware/cache");
 
 server.extend(module.superModule);
-server.prepend("Show", cache.applyDefaultCache, function (req, res, next) {
+server.prepend("Show", cache.applyCustomCache, function (req, res, next) {
   var viewData = res.getViewData();
   viewData.param1 = "This is from prepend";
   res.setViewData(viewData);
   next();
 });
-server.append("Show", cache.applyDefaultCache, function (req, res, next) {
+server.append("Show", cache.applyCustomCache, function (req, res, next) {
   var viewData = res.getViewData();
   //declare param1 as a variable that equals 'General company details.'
   var appendParam = "This is from append";
@@ -25,6 +25,7 @@ server.append("Show", cache.applyDefaultCache, function (req, res, next) {
       appendParam +
       " AND querystring param = " +
       queryparam,
+    param2: res.cachePeriod + " " + res.cachePeriodUnit,
   });
   next();
 });
