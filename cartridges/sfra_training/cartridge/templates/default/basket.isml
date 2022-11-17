@@ -1,14 +1,17 @@
-<div class="basket">
-    <!-- dwMarker="product" dwContentID="${product.uuid}" -->
-    <div class="tile-body">
-        <isif condition="${pdict.basket.allProductLineItems.size() == 0}">
-            <p>Cart is empty</p>
-            <iselse>
-                <isloop items="${pdict.items}" var="productLineItem" status="loopstate">
-                    Count ${loopstate.count} Index ${loopstate.index} ${productLineItem.productName}<br />
-                </isloop>
-        </isif>
+<isdecorate template="common/layout/checkout">
+    <div class="basket">
+        <!-- dwMarker="product" dwContentID="${product.uuid}" -->
+        <div class="tile-body">
+            <isif condition="${pdict.basket.allProductLineItems.size() == 0}">
+                <p>Cart is empty</p>
+                <iselse>
+                    <isloop items="${pdict.items}" var="lineItem" status="loopstate">
+                        <isinclude template="cart/productCard/cartProductCard" />
+                    </isloop>
+            </isif>
 
+        </div>
+        <!-- END_dwmarker -->
     </div>
-    <!-- END_dwmarker -->
-</div>
+
+</isdecorate>
