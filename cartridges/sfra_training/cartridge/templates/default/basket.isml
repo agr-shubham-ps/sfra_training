@@ -1,23 +1,27 @@
-<isdecorate template="common/layout/checkout">
-    <div class="basket">
-        <!-- dwMarker="product" dwContentID="${product.uuid}" -->
-        <div class="tile-body">
-            <h2>${Resource.msg('title.cart', 'cart', null)}</h2>
-            <isif condition="${pdict.basket.allProductLineItems.size() == 0}">
-                <p>Cart is empty</p>
-                <iselse>
-                    <isloop items="${pdict.items}" var="lineItem" status="loopstate">
-                        ${Resource.msg('product.name', 'cart', null)}
-                        <isinclude template="cart/productCard/cartProductCardHeader" />
-                        ${Resource.msg('product.price', 'cart', null)}
-                        <isinclude template="cart/productCard/cartProductCardProductPrice" />
-                        ${Resource.msg('product.availability', 'cart', null)}
-                        <isinclude template="cart/productCard/cartProductCardAvailability" />
-                    </isloop>
-            </isif>
+<iscomment>
+    <isdecorate template="common/layout/checkout">
+</iscomment>
+<div class="basket">
+    <!-- dwMarker="product" dwContentID="${product.uuid}" -->
+    <div class="tile-body">
+        <h2>${Resource.msg('title.cart', 'cart', null)}</h2>
+        <isif condition="${pdict.basket.allProductLineItems.size() == 0}">
+            <p>Cart is empty</p>
+            <iselse>
+                <isloop items="${pdict.items}" var="lineItem" status="loopstate">
+                    ${Resource.msg('product.name', 'cart', null)}
+                    <isinclude template="cart/productCard/cartProductCardHeader" />
+                    ${Resource.msg('product.price', 'cart', null)}
+                    <isinclude template="cart/productCard/cartProductCardProductPrice" />
+                    ${Resource.msg('product.availability', 'cart', null)}
+                    <isinclude template="cart/productCard/cartProductCardAvailability" />
+                </isloop>
+        </isif>
 
-        </div>
-        <!-- END_dwmarker -->
     </div>
+    <!-- END_dwmarker -->
+</div>
 
-</isdecorate>
+<iscomment>
+    </isdecorate>
+</iscomment>

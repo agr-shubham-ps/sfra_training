@@ -1,7 +1,6 @@
 "use strict";
 var server = require("server");
 var BasketMgr = require("dw/order/BasketMgr");
-var cache = require("*/cartridge/scripts/middleware/cache");
 server.get("Show", function (req, res, next) {
   // var basket = BasketMgr.getCurrentBasket();
   var CartModel = require("*/cartridge/models/cart");

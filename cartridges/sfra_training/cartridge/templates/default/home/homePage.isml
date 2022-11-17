@@ -6,7 +6,7 @@
     </isscript>
     <p>Use of prepend/append/replace using viewData: ${pdict.param1}</p>
     <p>Use of ex cache.js (middleware script): ${pdict.param2}</p>
-
+    <isinclude url="${URLUtils.url('Basket-Show')}" />
     <!-- +1.888.555.0199 -->
     <!--This phone is a requirement to support existing Gomez monitor of SiteGenesis. Demandware customers can remove this.-->
     <div class="home-main homepage">
