@@ -23,7 +23,7 @@
     "sinon": "^1.17.4",
     "chai": "^3.5.0",
     "proxyquire": "1.7.4",
-    "sgmf-scripts": "^2.0.0",
+    "sgmf-scripts": "^2.4.1",
     "css-loader": "^0.28.11",
     "node-sass": "^4.9.0",
     "postcss-loader": "^2.1.5",
@@ -32,5 +32,8 @@
   "browserslist": [
     "last 2 versions",
     "ie >= 10"
-  ]
+  ],
+  "paths": {
+    "base": "../storefront-reference-architecture/cartridges/app_storefront_base/"
+  }
 }
