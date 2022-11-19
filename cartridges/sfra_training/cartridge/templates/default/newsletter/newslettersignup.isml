@@ -36,6 +36,7 @@
                                 - <isprint value="${pdict.newsletterForm.email.attributes}" encoding="off" />>
                             <div class="invalid-feedback"></div>
                         </div>
+                        <iscomment> add this line </iscomment>
                         <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
                         <button type="submit"
                             class="btn btn-block btn-primary">${Resource.msg('button.form.emailsignup', 'homePage', null)}</button>
